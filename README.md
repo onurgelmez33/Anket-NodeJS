@@ -1,7 +1,7 @@
 
   
 ## Veritabanı
-+ Veritabanı bilgileri buradan değişecek config/db.js
++ Veritabanı bağlantısı `config/db.js` dosyasından değişecek
   
 ## Yükleme
 ```bash
