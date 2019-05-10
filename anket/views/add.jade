@@ -1,0 +1,23 @@
+extends layout
+
+block add
+    label Puanla
+    hr
+    form(method='POST' action='/add')
+        table.list-edit
+            tr
+                th Ad
+                td
+                    input(type="text" name="Ad").text
+            tr
+                th Soyad
+                td
+                    input(type="text" name="Soyad").text
+            tr
+                th Puan
+                td 
+                    input(type="number" name="Puan").text
+            tr
+                td(colspan="2")
+                    button(type="submit").btn Kaydet
+                    button(type="button" onclick="javascript: location.href='/'; ").btn Geri

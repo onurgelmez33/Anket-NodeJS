@@ -1,0 +1,37 @@
+extends layout
+block home
+    -var puan = 0
+    label Toplam: #{data.length}
+    hr
+    a(href="/add", title="title").btn Ekle 
+    table.list
+      thead
+        tr
+          th Id
+          th Ad
+          th Soyad
+          th Puan
+          th Tarih
+          th 
+      each item in data
+        tr
+        - puan += item.Puan
+          td= item.Id
+          td= item.Ad
+          td= item.Soyad
+          td= item.Puan
+          td= item.Tarih
+          td  
+            a(href="/edit/#{item.Id}", title="Düzenle").icon
+              i(aria-hidden="true").fa.fa-pencil-square
+            a(href="/delete/#{item.Id}", title="Sil" onclick="return confirm('Puanlamayı sil：#{item.Ad} #{item.Soyad}?');").icon
+              i(aria-hidden="true").fa.fa-trash
+      - puan = puan / data.length
+        tr
+          td
+          td
+          td
+          td #{puan}
+          td
+          td
+      

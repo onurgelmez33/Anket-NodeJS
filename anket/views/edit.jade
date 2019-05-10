@@ -1,0 +1,30 @@
+extends layout
+
+block edit
+    label Kullanıcı： #{data.Ad} #{data.Soyad}
+    hr
+    form(method='POST' action='/update')
+        input(type="hidden" name="Id" value=data.Id)
+        table.list-edit
+            tr
+                th Id
+                td=data.Id     
+            tr
+                th Ad
+                td
+                    input(type="text" name="Ad" value=data.Ad).text
+            tr
+                th Soyad
+                td 
+                    input(type="text" name="Soyad" value=data.Soyad).text
+            tr
+                th Puan
+                td 
+                    input(type="number" name="Puan" value=data.Puan).text
+            tr
+                th Tarih
+                td=data.Tarih   
+            tr
+                td(colspan="2")
+                    button(type="submit").btn Kaydet
+                    button(type="button" onclick="javascript: location.href='/'; ").btn Geri
